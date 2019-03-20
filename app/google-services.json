@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "892322139187",
+    "firebase_url": "https://invigilate-cecb2.firebaseio.com",
+    "project_id": "invigilate-cecb2",
+    "storage_bucket": "invigilate-cecb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892322139187:android:bb644e847b74ed91",
+        "android_client_info": {
+          "package_name": "com.example.avitor.invigilate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892322139187-qsq0fkg85j8r9sl48j7joejc10rctvu1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.avitor.invigilate",
+            "certificate_hash": "090caab6cb655364ced2693f56ee5e8e1e147909"
+          }
+        },
+        {
+          "client_id": "892322139187-q0kicjut857ha2nca8g062eq4d0du2iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC-ENoiROnwQs-36iPZj_SzM-bZVmrOC0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892322139187-q0kicjut857ha2nca8g062eq4d0du2iv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
