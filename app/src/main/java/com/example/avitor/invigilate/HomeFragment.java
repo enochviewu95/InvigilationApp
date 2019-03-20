@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         assert view != null;
         WebView webView = view.findViewById(R.id.homePageWeb);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.google.com/");
+        webView.loadUrl("https://www.invigilate.orientsdev.com/");
 
 
     }
