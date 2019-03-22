@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainPageActivity">
 
@@ -19,7 +20,7 @@
         android:id="@+id/floatingActionMenu"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="30dp"
+        android:layout_marginBottom="60dp"
         app:menu_showShadow="true"
         app:menu_fab_label=""
         app:menu_openDirection="up"

@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -26,21 +29,16 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
-
-    }
-
-
-    //Starting web view when the fragment is about to appear
-    @Override
-    public void onStart() {
-        super.onStart();
-        view = getView();
-        assert view != null;
+        super.onCreateView(inflater,container,savedInstanceState);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
         WebView webView = view.findViewById(R.id.homePageWeb);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://www.invigilate.orientsdev.com/");
 
+        return view;
 
     }
+
 }

@@ -32,16 +32,17 @@ public class MainPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+        getSupportActionBar().hide();
 
 
         //Setting on click listeners for the floating action buttons
-        floatingActionMenu = (FloatingActionMenu)findViewById(R.id.floatingActionMenu);
-        floatingActionHome = (FloatingActionButton) findViewById(R.id.floatingActionHome);
-        floatingActionMessages = (FloatingActionButton) findViewById(R.id.floatingActionMessages);
-        floatingActionSettings = (FloatingActionButton) findViewById(R.id.floatingActionSettings);
+        floatingActionMenu = findViewById(R.id.floatingActionMenu);
+        floatingActionHome = findViewById(R.id.floatingActionHome);
+        floatingActionMessages = findViewById(R.id.floatingActionMessages);
+        floatingActionSettings = findViewById(R.id.floatingActionSettings);
 
         //Declaration of framelayout
-        mMainFrameLayout = (FrameLayout)findViewById(R.id.mainFrameLayout);
+        mMainFrameLayout = findViewById(R.id.mainFrameLayout);
 
         //initialization of fragment
         homeFragment = new HomeFragment();
