@@ -6,9 +6,8 @@
     tools:context=".HomeFragment">
 
     <WebView
+        android:id="@+id/homePageWeb"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/homePageWeb">
-    </WebView>
+        android:layout_height="match_parent"></WebView>
 
 </FrameLayout>

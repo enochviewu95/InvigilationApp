@@ -1,27 +1,29 @@
 package com.example.avitor.invigilate;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    //Declaration of floating action menu
-    private FloatingActionMenu floatingActionMenu;
+    //Declaration of bottom navigation
+    private BottomNavigationView mMainNav;
 
-    //Declaration of the framelayout
+    //Declaration of the frameLayout
     private FrameLayout mMainFrameLayout;
-    //Declaration of the floating action button
-    private FloatingActionButton floatingActionHome;
-    private FloatingActionButton floatingActionMessages;
-    private FloatingActionButton floatingActionSettings;
 
     //Declaration of fragment
     private HomeFragment homeFragment;
@@ -34,54 +36,53 @@ public class MainPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
         getSupportActionBar().hide();
 
+        //Initialization of bottom navigation
+        mMainNav = findViewById(R.id.bottomNav);
 
-        //Setting on click listeners for the floating action buttons
-        floatingActionMenu = findViewById(R.id.floatingActionMenu);
-        floatingActionHome = findViewById(R.id.floatingActionHome);
-        floatingActionMessages = findViewById(R.id.floatingActionMessages);
-        floatingActionSettings = findViewById(R.id.floatingActionSettings);
-
-        //Declaration of framelayout
+        //Declaration of frameLayout
         mMainFrameLayout = findViewById(R.id.mainFrameLayout);
 
-        //initialization of fragment
+        //Initialize the fragments
         homeFragment = new HomeFragment();
-        messagesFragment = new MessagesFragment();
         settingsFragment = new SettingsFragment();
+        messagesFragment = new MessagesFragment();
 
-        //Set default layout to home fragment
+        //Set fragment to load home by default
         setFragment(homeFragment);
 
-
-        floatingActionHome.setOnClickListener(new View.OnClickListener() {
+        mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                setFragment(homeFragment);
-            }
-        });
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home_nav:
+                        setFragment(homeFragment);
+                        return true;
 
+                    case R.id.message_nav:
+                        setFragment(messagesFragment);
+                        return true;
 
-        floatingActionMessages.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment(messagesFragment);
-            }
-        });
+                    case R.id.settings_nav:
+                        setFragment(settingsFragment);
+                        return true;
 
-        floatingActionSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment(settingsFragment);
+                        default:
+                            return false;
+                }
             }
         });
 
     }
 
 
-    //Replacing the
+
+    //Populating the currently set fragment
     public void setFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.mainFrameLayout,fragment);
         fragmentTransaction.commit();
     }
+
+
+
 }

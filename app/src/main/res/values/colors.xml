@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#c4ffffff</color>
     <color name="splashScreenActivity">#171941</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorShadeOfWhite">#bcd8d8d8</color>
+    <color name="itemBackgroundColor">#d9273096</color>
+
 </resources>

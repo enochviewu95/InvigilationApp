@@ -1,6 +1,7 @@
 package com.example.avitor.invigilate;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ public class HomeFragment extends Fragment {
     }
 
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class HomeFragment extends Fragment {
         webSettings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://www.invigilate.orientsdev.com/");
+        webView.setVerticalScrollBarEnabled(true);
 
         return view;
 
